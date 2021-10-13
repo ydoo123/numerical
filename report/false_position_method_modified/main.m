@@ -16,11 +16,14 @@ end
 
 iter = 0;
 x_r = 0;
+fprintf(1,'iter  x_l  x_u  x_r  y_l  y_u  y_r \n');
 
 while(1)
     iter = iter + 1;
     x_r = (x_l*y_u - x_u*y_l)/(y_u - y_l);
     y_r = fun(x_r);
+    
+    fprintf(1,'%d %f %f %f %f %f %f\n',iter, x_l, x_u,x_r, y_l,y_u,y_r);
     
     if (y_l*y_r < 0)
         if(abs(x_r - x_u) < tol_x || abs(y_r) < tol_y)
