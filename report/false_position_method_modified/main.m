@@ -26,12 +26,6 @@ while(1)
     fprintf(1,'%d %f %f %f %f %f %f\n',iter, x_l, x_u,x_r, y_l,y_u,y_r);
     
     if (y_l*y_r < 0)
-
-        if(abs(x_r - x_u) < tol_x || abs(y_r) < tol_y)
-            fprintf(1,'Approximate solution x_r= %.7f \n', x_r);
-            break
-        end
-        
         x_r_1 = (((-y_r) * (x_r - x_l))/(0.5 * y_l - y_r)) + x_r;
 
         if fun(x_r_1)*y_l < 0
@@ -40,23 +34,25 @@ while(1)
             x_u = x_r;
             x_l = x_r_1;
         end
+
+        if(abs(x_r - x_r_1) < tol_x || abs(fun(x_r_1)) < tol_y)
+            fprintf(1,'Approximate solution x_r= %.7f \n', x_r_1);
+            break
+        end
         
     else
-        if(abs(x_l - x_r) < tol_x || abs(y_r) < tol_y)
-            fprintf(1,'Approximate solution x_r= %.7f \n', x_r);
-            break
-<<<<<<< HEAD
-=======
-        end
->>>>>>> 0a17856f562ab7af5ff604df3be5f68b881a1440
-        
-        x_r_1 = (((-y_r) * (x_u - x_r))/(2 * y_r - y_u)) + x_r;
+        x_r_1 = (((-y_r) * (x_u - x_r))/(0.5 * y_u - y_r)) + x_r;
         
         if fun(x_r_1) * y_l < 0
             x_l = x_r_1;
         else
             x_l = x_r;
             x_u = x_r_1;
+        end
+
+        if(abs(x_r - x_r_1) < tol_x || abs(fun(x_r_1)) < tol_y)
+            fprintf(1,'Approximate solution x_r= %.7f \n', x_r_1);
+            break
         end
     end
 end
