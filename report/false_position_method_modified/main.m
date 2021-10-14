@@ -45,6 +45,10 @@ while(1)
         if(abs(x_l - x_r) < tol_x || abs(y_r) < tol_y)
             fprintf(1,'Approximate solution x_r= %.7f \n', x_r);
             break
+<<<<<<< HEAD
+=======
+        end
+>>>>>>> 0a17856f562ab7af5ff604df3be5f68b881a1440
         
         x_r_1 = (((-y_r) * (x_u - x_r))/(2 * y_r - y_u)) + x_r;
         
