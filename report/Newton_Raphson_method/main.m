@@ -8,7 +8,6 @@ iter_max = 100;
 iter = 0;
 
 x_i = 1.5;
-gittest = 0;
 
 
 for i = 1:iter_max
