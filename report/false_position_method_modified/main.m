@@ -43,5 +43,5 @@ while (1)
     iter = iter + 1;
 end
 
-fprintf(1,'iter= %d \n', iter);
-fprintf(1,'root= %.7f \n', root);
+fprintf(1,'iter = %d \n', iter);
+fprintf(1,'root = %.7f \n', root);

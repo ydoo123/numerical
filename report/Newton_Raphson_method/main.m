@@ -24,5 +24,5 @@ for i = 1:iter_max
     
 end
 
-fprintf(1,'iter= %d \n', i);
-fprintf(1,'Approximate solution root= %.7f \n', root);
+fprintf(1,'iter = %d \n', i);
+fprintf(1,'root = %.7f \n', root);
