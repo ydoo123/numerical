@@ -12,8 +12,8 @@ for i = 1:iter_max
     slope = abs((fun(y_i) - y_i)/(x_i - y_i));
     
     if slope > 1
-        fprintf(1,'Wrong point \n');
-        break
+        fprintf(1,'no root exists \n');
+        return
     end
 
     if abs(y_i - x_i) < tol

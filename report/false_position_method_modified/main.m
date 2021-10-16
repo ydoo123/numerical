@@ -9,10 +9,16 @@ tol_y = 0.00001;
 y_l = fun(x_l);
 y_u = fun(x_u);
 
+if (y_l*y_u > 0)
+    fprintf('no root exists \n');
+    return
+end
+
 x_r= x_l - (y_l * (x_u - x_l) / (y_u - y_l));
 y_r=fun(x_r);
 
 iter = 0;
+root = 0;
 
 while (1)
     if y_l * y_r < 0
