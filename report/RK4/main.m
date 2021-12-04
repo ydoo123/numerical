@@ -8,7 +8,7 @@ x_arr = zeros(100);
 dt = zeros(100);
 
 for i = 1:100
-    fprintf(1,'root = %.7f \n', x);
+    %fprintf(1,'root = %.7f \n', x);
     
     k_1 = fun(t,x);
     k_2 = fun(t + 0.5*h, x + 0.5 * k_1 * h);
@@ -24,3 +24,8 @@ for i = 1:100
 end
 
 plot(dt, x_arr);
+title('RK4');
+legend('RK4');
+xlabel('t (sec)');
+ylabel('x(t)');
+grid on
